@@ -14,8 +14,8 @@
 
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fb 0%, #e9ecef 100%);
     scroll-behavior: smooth;
   }
 
@@ -24,20 +24,29 @@
     background: linear-gradient(135deg, #1e90ff, #00c6ff);
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
     animation: fadeDown 1s ease-in-out;
     position: relative;
     z-index: 10;
+    box-shadow: 0 5px 20px rgba(30, 144, 255, 0.3);
   }
 
   header h1 {
-    margin: 10px 0;
-    font-size: 32px;
+    margin: 15px 0 5px;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  header p {
+    font-size: 18px;
+    opacity: 0.95;
+    font-weight: 300;
   }
 
   .logo {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background: white;
     border-radius: 50%;
     display: inline-flex;
@@ -45,8 +54,9 @@
     justify-content: center;
     font-weight: bold;
     color: #1e90ff;
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   }
 
   /* SLIDESHOW CONTAINER */
@@ -54,10 +64,10 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 40px auto;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   }
 
   .slide {
@@ -87,6 +97,7 @@
     border-radius: 8px;
     font-size: 14px;
     z-index: 20;
+    font-weight: 600;
   }
 
   /* SLIDE NAVIGATION BUTTONS */
@@ -94,19 +105,21 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.7);
-    color: #000;
+    background: rgba(255,255,255,0.8);
+    color: #1e90ff;
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     padding: 15px 20px;
     cursor: pointer;
     border-radius: 8px;
     transition: 0.3s;
     z-index: 15;
+    font-weight: bold;
   }
 
   .nav-button:hover {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
+    transform: translateY(-50%) scale(1.1);
   }
 
   .prev {
@@ -123,7 +136,7 @@
     bottom: 0;
     left: 0;
     height: 5px;
-    background: #25D366;
+    background: linear-gradient(90deg, #25D366, #1ebe5d);
     width: 0%;
     animation: progress 5s linear forwards;
     z-index: 25;
@@ -137,14 +150,16 @@
   /* DOTS NAVIGATION */
   .dots-container {
     text-align: center;
-    padding: 15px 0;
+    padding: 25px 0 15px;
+    background: white;
+    margin-bottom: 0;
   }
 
   .dot {
     height: 12px;
     width: 12px;
-    margin: 0 5px;
-    background-color: #bbb;
+    margin: 0 6px;
+    background-color: #ddd;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
@@ -153,76 +168,184 @@
 
   .dot.active {
     background-color: #1e90ff;
+    transform: scale(1.2);
   }
 
   /* SECTIONS */
   section {
-    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
 
   .card {
     background: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     transform: translateY(30px);
     opacity: 0;
     animation: fadeUp 1s forwards;
+    border-left: 5px solid #1e90ff;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    transform: translateY(0px);
   }
 
   .card:nth-child(2) { animation-delay: 0.2s; }
   .card:nth-child(3) { animation-delay: 0.4s; }
   .card:nth-child(4) { animation-delay: 0.6s; }
+  .card:nth-child(5) { animation-delay: 0.8s; }
 
-  /* BUTTONS */
-  a button {
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: 0.3s;
+  .card h2 {
+    color: #1e90ff;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
   }
 
-  a button:hover {
-    transform: scale(1.05);
-    background: #1ebe5d;
+  .card p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .card li {
+    color: #555;
+    font-size: 16px;
+    line-height: 2;
+    padding-left: 30px;
+    position: relative;
+  }
+
+  .card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #25D366;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* ACTION BUTTONS */
+  .action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #1e90ff, #00c6ff);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(30, 144, 255, 0.3);
+  }
+
+  .btn-success {
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+    color: white;
+  }
+
+  .btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  }
+
+  .btn-info {
+    background: linear-gradient(135deg, #ff6b6b, #ff8787);
+    color: white;
+  }
+
+  .btn-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+  }
+
+  /* FLOATING ACTION BUTTONS */
+  .floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+  }
+
+  .float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+  }
+
+  .float-btn:hover {
+    transform: scale(1.15);
+    animation: none;
+  }
+
+  .float-whatsapp {
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+  }
+
+  .float-call {
+    background: linear-gradient(135deg, #1e90ff, #00c6ff);
+  }
+
+  .float-email {
+    background: linear-gradient(135deg, #ff6b6b, #ff8787);
   }
 
   /* FOOTER */
   footer {
-    background: #222;
+    background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-size: 14px;
   }
 
-  /* FLOATING WHATSAPP BUTTON */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation: pulse 2s infinite;
-    z-index: 100;
-  }
-
-  .whatsapp-float:hover {
-    transform: scale(1.1);
+  footer p {
+    margin: 5px 0;
   }
 
   /* ANIMATIONS */
@@ -241,20 +364,43 @@
   }
 
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
     70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
     100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
   }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    .nav-button {
-      padding: 10px 15px;
-      font-size: 18px;
+    header h1 {
+      font-size: 28px;
     }
 
-    header h1 {
-      font-size: 24px;
+    .card {
+      padding: 25px;
+    }
+
+    .card h2 {
+      font-size: 22px;
+    }
+
+    .action-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .floating-buttons {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .float-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
     }
   }
 
@@ -265,8 +411,8 @@
 
 <header>
   <div class="logo">WW</div>
-  <h1>Wash and Wear Laundry Services</h1>
-  <p>Clean Clothes, Fresh Life</p>
+  <h1>Wash and Wear</h1>
+  <p>Professional Laundry Services</p>
 </header>
 
 <!-- ANIMATED SLIDESHOW -->
@@ -327,49 +473,75 @@
 <section>
 
   <div class="card">
-    <h2>About Us</h2>
-    <p>We provide fast, reliable, and affordable laundry services including washing, drying, ironing, and delivery.</p>
+    <h2>✨ Premium Laundry Excellence</h2>
+    <p>Experience the difference of professional care. Our expert team treats every garment with precision and dedication. From delicate fabrics to everyday wear, we ensure your clothes come back fresher, cleaner, and looking like new. Quality isn't just our promise—it's our guarantee.</p>
+    <div class="action-buttons">
+      <a href="https://wa.me/256742509800" target="_blank" class="btn btn-success">📱 WhatsApp Us</a>
+      <a href="tel:+256742509800" class="btn btn-primary">📞 Call Now</a>
+    </div>
   </div>
 
   <div class="card">
-    <h2>Our Services</h2>
+    <h2>🎯 Our Premium Services</h2>
+    <p>Discover a complete range of professional laundry solutions designed for every need:</p>
     <ul>
-      <li>Washing & Folding</li>
-      <li>Ironing Services</li>
-      <li>Dry Cleaning</li>
-      <li>Pickup & Delivery</li>
+      <li><strong>Express Washing & Folding</strong> – Fast turnaround, perfect finish</li>
+      <li><strong>Professional Ironing</strong> – Crisp, pristine presentation every time</li>
+      <li><strong>Specialty Dry Cleaning</strong> – Expert care for your finest garments</li>
+      <li><strong>Convenient Pickup & Delivery</strong> – We come to you, no hassle</li>
+      <li><strong>Stain Removal Treatment</strong> – Even tough stains disappear</li>
+      <li><strong>Fabric Care Consultation</strong> – Protect your wardrobe investment</li>
+    </ul>
+    <div class="action-buttons">
+      <a href="https://wa.me/256742509800" target="_blank" class="btn btn-success">💬 Get Details</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🌟 Why Choose Wash and Wear?</h2>
+    <p><strong>Affordable Excellence, Professional Care.</strong> We combine competitive pricing with premium-quality service. Your satisfaction is our mission. With fast turnaround times, careful handling, and attention to detail, we're not just washing clothes—we're caring for your wardrobe.</p>
+    <ul>
+      <li>Same-day service available</li>
+      <li>Eco-friendly cleaning methods</li>
+      <li>Expert staff with years of experience</li>
+      <li>Affordable rates with zero hidden charges</li>
+      <li>Customer satisfaction guaranteed</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Contact Us</h2>
-    <p>Email: jamilarajab791@gmail.com</p>
-    <p>Phone: 0742-509800</p>
+    <h2>📞 Get in Touch Today</h2>
+    <p>Ready to experience the Wash and Wear difference? Reach out to us now! We're here to answer all your questions and provide the laundry care your clothes deserve.</p>
+    <p><strong>Email:</strong> jamilarajab791@gmail.com</p>
+    <p><strong>Phone:</strong> 0742-509800</p>
+    <div class="action-buttons">
+      <a href="https://wa.me/256742509800" target="_blank" class="btn btn-success">💬 WhatsApp</a>
+      <a href="tel:+256742509800" class="btn btn-primary">📞 Call</a>
+      <a href="mailto:jamilarajab791@gmail.com" class="btn btn-info">📧 Email</a>
+    </div>
   </div>
 
   <div class="card">
-    <h2>Order Now</h2>
-    <p>Contact us instantly:</p>
-
-    <p><a href="mailto:jamilarajab791@gmail.com"><button>Send Email</button></a></p>
-
-    <p>
-      <a href="https://wa.me/256742509800" target="_blank">
-        <button>Chat on WhatsApp</button>
-      </a>
-    </p>
+    <h2>🚀 Limited Time Offer</h2>
+    <p><strong>First-time customers:</strong> Get special discounts on your first order! Experience our premium service at an unbeatable price. Join hundreds of satisfied customers who trust Wash and Wear for their laundry needs.</p>
+    <div class="action-buttons">
+      <a href="https://wa.me/256742509800?text=Hi%20Wash%20and%20Wear%21%20I%20want%20to%20take%20advantage%20of%20your%20first-time%20customer%20offer" target="_blank" class="btn btn-success">🎁 Claim Your Discount</a>
+    </div>
   </div>
 
 </section>
 
 <footer>
-  <p>&copy; 2026 Wash and Wear Laundry Services</p>
+  <p>&copy; 2026 Wash and Wear Laundry Services. All rights reserved.</p>
+  <p>Professional Care. Affordable Prices. Guaranteed Satisfaction.</p>
 </footer>
 
-<!-- Floating WhatsApp Button -->
-<a class="whatsapp-float" href="https://wa.me/256742509800" target="_blank">
-  💬
-</a>
+<!-- FLOATING ACTION BUTTONS -->
+<div class="floating-buttons">
+  <a href="https://wa.me/256742509800" target="_blank" class="float-btn float-whatsapp" title="WhatsApp us">💬</a>
+  <a href="tel:+256742509800" class="float-btn float-call" title="Call us">📞</a>
+  <a href="mailto:jamilarajab791@gmail.com" class="float-btn float-email" title="Email us">📧</a>
+</div>
 
 <script>
   let currentIndex = 1;
